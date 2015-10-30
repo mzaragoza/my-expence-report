@@ -1,0 +1,199 @@
+-#!!!
+-#%html
+  %head
+    %title MyExpenceReport
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    = yield
+
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    %title 
+      My Expence Report
+    %link{:href => "/assets/css/bootstrap.min.css", :rel => "stylesheet"}/
+    %link{:href => "/assets/css/stylish-portfolio.css", :rel => "stylesheet"}/
+    %link{:href => "/assets/font-awesome/css/font-awesome.min.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic", :rel => "stylesheet", :type => "text/css"}/
+    /[if lt IE 9]
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  %body
+    %a#menu-toggle.btn.btn-dark.btn-lg.toggle{:href => "#"}
+      %i.fa.fa-bars
+    %nav#sidebar-wrapper
+      %ul.sidebar-nav
+        %a#menu-close.btn.btn-light.btn-lg.pull-right.toggle{:href => "#"}
+          %i.fa.fa-times
+        %li.sidebar-brand
+          %a{:href => "#top", :onclick => "$(\"#menu-close\").click();"} Start Bootstrap
+        %li
+          %a{:href => "#top", :onclick => "$(\"#menu-close\").click();"} Home
+        %li
+          %a{:href => "#about", :onclick => "$(\"#menu-close\").click();"} About
+        %li
+          %a{:href => "#services", :onclick => "$(\"#menu-close\").click();"} Services
+        %li
+          %a{:href => "#portfolio", :onclick => "$(\"#menu-close\").click();"} Portfolio
+        %li
+          %a{:href => "#contact", :onclick => "$(\"#menu-close\").click();"} Contact
+    / Header
+    %header#top.header
+      .text-vertical-center
+        %h1 My Expence Report
+        %h3 Free Bootstrap Themes & Templates
+        %br/
+        %a.btn.btn-dark.btn-lg{:href => "#about"} Find Out More
+    %section#about.about
+      .container
+        .row
+          .col-lg-12.text-center
+            %h2 Stylish Portfolio is the perfect theme for your next project!
+            %p.lead
+              This theme features some wonderful photography courtesy of
+              = succeed "." do
+                %a{:href => "http://join.deathtothestockphoto.com/", :target => "_blank"} Death to the Stock Photo
+    %section#services.services.bg-primary
+      .container
+        .row.text-center
+          .col-lg-10.col-lg-offset-1
+            %h2 Our Services
+            %hr.small/
+            .row
+              .col-md-3.col-sm-6
+                .service-item
+                  %span.fa-stack.fa-4x
+                    %i.fa.fa-circle.fa-stack-2x
+                    %i.fa.fa-cloud.fa-stack-1x.text-primary
+                  %h4
+                    %strong Service Name
+                  %p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  %a.btn.btn-light{:href => "#"} Learn More
+              .col-md-3.col-sm-6
+                .service-item
+                  %span.fa-stack.fa-4x
+                    %i.fa.fa-circle.fa-stack-2x
+                    %i.fa.fa-compass.fa-stack-1x.text-primary
+                  %h4
+                    %strong Service Name
+                  %p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  %a.btn.btn-light{:href => "#"} Learn More
+              .col-md-3.col-sm-6
+                .service-item
+                  %span.fa-stack.fa-4x
+                    %i.fa.fa-circle.fa-stack-2x
+                    %i.fa.fa-flask.fa-stack-1x.text-primary
+                  %h4
+                    %strong Service Name
+                  %p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  %a.btn.btn-light{:href => "#"} Learn More
+              .col-md-3.col-sm-6
+                .service-item
+                  %span.fa-stack.fa-4x
+                    %i.fa.fa-circle.fa-stack-2x
+                    %i.fa.fa-shield.fa-stack-1x.text-primary
+                  %h4
+                    %strong Service Name
+                  %p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  %a.btn.btn-light{:href => "#"} Learn More
+    %aside.callout
+      .text-vertical-center
+    %section#portfolio.portfolio
+      .container
+        .row
+          .col-lg-10.col-lg-offset-1.text-center
+            %h2 Our Work
+            %hr.small/
+            .row
+              .col-md-6
+                .portfolio-item
+                  %a{:href => "#"}
+                    %img.img-portfolio.img-responsive{:src => "/assets/img/portfolio-1.jpg"}/
+              .col-md-6
+                .portfolio-item
+                  %a{:href => "#"}
+                    %img.img-portfolio.img-responsive{:src => "/assets/img/portfolio-2.jpg"}/
+              .col-md-6
+                .portfolio-item
+                  %a{:href => "#"}
+                    %img.img-portfolio.img-responsive{:src => "/assets/img/portfolio-3.jpg"}/
+              .col-md-6
+                .portfolio-item
+                  %a{:href => "#"}
+                    %img.img-portfolio.img-responsive{:src => "/assets/img/portfolio-4.jpg"}/
+            %a.btn.btn-dark{:href => "#"} View More Items
+    %aside.call-to-action.bg-primary
+      .container
+        .row
+          .col-lg-12.text-center
+            %h3 The buttons below are impossible to resist.
+            %a.btn.btn-lg.btn-light{:href => "#"} Click Me!
+            %a.btn.btn-lg.btn-dark{:href => "#"} Look at Me!
+    %section#contact.map
+      %iframe{:frameborder => "0", :height => "100%", :marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&aq=0&oq=twitter&sll=28.659344,-81.187888&sspn=0.128789,0.264187&ie=UTF8&hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&t=m&z=15&iwloc=A&output=embed", :width => "100%"}
+      %br/
+      %small
+        %a{:href => "https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&aq=0&oq=twitter&sll=28.659344,-81.187888&sspn=0.128789,0.264187&ie=UTF8&hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&t=m&z=15&iwloc=A"}
+    %footer
+      .container
+        .row
+          .col-lg-10.col-lg-offset-1.text-center
+            %h4
+              %strong Start Bootstrap
+            %p
+              3481 Melrose Place
+              %br>/
+              Beverly Hills, CA 90210
+            %ul.list-unstyled
+              %li
+                %i.fa.fa-phone.fa-fw
+                (123) 456-7890
+              %li
+                %i.fa.fa-envelope-o.fa-fw
+                %a{:href => "mailto:name@example.com"} name@example.com
+            %br/
+            %ul.list-inline
+              %li
+                %a{:href => "#"}
+                  %i.fa.fa-facebook.fa-fw.fa-3x
+              %li
+                %a{:href => "#"}
+                  %i.fa.fa-twitter.fa-fw.fa-3x
+              %li
+                %a{:href => "#"}
+                  %i.fa.fa-dribbble.fa-fw.fa-3x
+            %hr.small/
+            %p.text-muted Copyright © Your Website 2014
+    %script{:src => "/assets/js/jquery.js"}
+    %script{:src => "/assets/js/bootstrap.min.js"}
+    :javascript
+      $("#menu-close").click(function(e) {
+          e.preventDefault();
+          $("#sidebar-wrapper").toggleClass("active");
+      });
+      $("#menu-toggle").click(function(e) {
+          e.preventDefault();
+          $("#sidebar-wrapper").toggleClass("active");
+      });
+      $(function() {
+          $('a[href*=#]:not([href=#])').click(function() {
+              if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                  var target = $(this.hash);
+                  target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                  if (target.length) {
+                      $('html,body').animate({
+                          scrollTop: target.offset().top
+                      }, 1000);
+                      return false;
+                  }
+              }
+          });
+      });
